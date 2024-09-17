@@ -9,7 +9,7 @@ const Posts = [
 function App() {
   const postQuery = useQuery({
     queryKey: ["posts"],
-    queryFn: () => wait(1000).then(() => [...Posts]),
+    queryFn: () => Promise.reject("error message"),
   });
 
   if (postQuery.isLoading) return <h1>Loading.....</h1>;
